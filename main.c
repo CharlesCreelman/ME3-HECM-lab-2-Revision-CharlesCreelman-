@@ -108,8 +108,6 @@
 
 //Exercise 2.1
 //Questions for GTA:
-//Check to see if this is correct? The lights on the LED Array are all turned
-//on regardless of the lighting
 
 
 //int main(void)
@@ -128,8 +126,7 @@
 
 //Exercise 2.2
 //Questions for GTA:
-//I think this isn't working for the same reason exercise 2.1 isn't working
-//
+
 //int main(void)
 //{
 //    unsigned int value = 0b000000000;
@@ -147,5 +144,18 @@
 
 //Exercise 3
 //Questions for GTA:
-
-// I'll give this a go when I can figure out why my code above isn't working properly
+//nearly got it working
+void main(void){
+    
+    ADC_init(); // setting the pins (initialising)
+    LEDarray_init();// setting pins (initialising)
+    unsigned int curvalue = 0b000000000;
+    unsigned int maxvalue = 0b000000000;
+    while(1){
+        curvalue = ADC_getval();
+        if(curvalue>maxvalue) {maxvalue=curvalue;}
+        LEDarray_disp_PPM(curvalue, maxvalue);
+        maxvalue=maxvalue-(255/9);
+        __delay_ms(1000);
+    }
+}

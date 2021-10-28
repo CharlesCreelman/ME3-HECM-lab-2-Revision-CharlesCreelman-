@@ -78,10 +78,13 @@ void LEDarray_disp_dec(unsigned int number)
 void LEDarray_disp_PPM(unsigned int cur_val, unsigned int max)
 {
 	unsigned int disp_val;
-	
+    unsigned int divider = (255/9);
+    if(max=cur_val) {cur_val=0;}
+
+	disp_val = pow(2,(cur_val/divider)) + pow(2,(max/divider));
 	// some code to format the variable cur_val and max, store in disp_val for display on the LED array
 	// hint: one method is to manipulate the variables separately and then combine them using the bitwise OR operator
-
+            
 	LEDarray_disp_bin(disp_val);	//display value on LED array
 }
 
