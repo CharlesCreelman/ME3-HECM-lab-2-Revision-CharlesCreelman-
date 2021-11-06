@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=lab-2-CharlesCreelman.X
+PROJECTNAME=lab-2-Revision-CharlesCreelman.X
 
 # Active Configuration
 DEFAULTCONF=default
